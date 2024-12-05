@@ -35,10 +35,10 @@ if __version_info__ < (20, 0, 0, "alpha", 1):
 from telegram import ForceReply, Update
 from telegram.ext import Application, CommandHandler, ContextTypes, MessageHandler, filters, ConversationHandler
 
-bot = telegram.Bot(token='6263719514:AAGj3bu4SRreXZgEnjal3SgzkO1BJsjRqkE')
+bot = telegram.Bot(token='API-Token-Telegram')
 url = 'https://svcs.ebay.com/services/search/FindingService/v1'
 operation_name = 'findItemsByKeywords'
-app_id = '-AssisTEM-PRD-8cd4f0a51-f8713116'
+app_id = 'API-Amazon'
 PRODUCT_NAME, PROD_PER_PAGE, FINAL_ID = range(3)
 # Enable logging
 logging.basicConfig(
@@ -81,18 +81,18 @@ async def prod_per_page(update, context):
     await bot.send_message(chat_id=update.effective_chat.id, text='ThX U 4r Ur InPt!')
     product_name = user_data['product_name']
     prod_per_page = user_data['prod_per_page']
-    # Çàäàåì çàãîëîâêè çàïðîñà
+    # Ã‡Ã Ã¤Ã Ã¥Ã¬ Ã§Ã Ã£Ã®Ã«Ã®Ã¢ÃªÃ¨ Ã§Ã Ã¯Ã°Ã®Ã±Ã 
     headers = {
     'X-EBAY-SOA-OPERATION-NAME': operation_name,
     'X-EBAY-SOA-SECURITY-APPNAME': app_id,
     'X-EBAY-SOA-RESPONSE-DATA-FORMAT': 'JSON'
               }
 
-    # Ïàðàìåòðû çàïðîñà
+    # ÃÃ Ã°Ã Ã¬Ã¥Ã²Ã°Ã» Ã§Ã Ã¯Ã°Ã®Ã±Ã 
     params = {
     'keywords': product_name,
     'paginationInput': {
-        'entriesPerPage': prod_per_page, # Îò 1 Äî 100 çàïðîñîâ
+        'entriesPerPage': prod_per_page, # ÃŽÃ² 1 Ã„Ã® 100 Ã§Ã Ã¯Ã°Ã®Ã±Ã®Ã¢
         'pageNumber': 1
                        }
              }
