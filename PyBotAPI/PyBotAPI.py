@@ -38,7 +38,7 @@ from telegram.ext import Application, CommandHandler, ContextTypes, MessageHandl
 bot = telegram.Bot(token='API-Token-Telegram')
 url = 'https://svcs.ebay.com/services/search/FindingService/v1'
 operation_name = 'findItemsByKeywords'
-app_id = 'API-Amazon'
+app_id = 'APP_ID-ebay'
 PRODUCT_NAME, PROD_PER_PAGE, FINAL_ID = range(3)
 # Enable logging
 logging.basicConfig(
